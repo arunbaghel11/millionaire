@@ -13,7 +13,7 @@ function App() {
   const data = [
     {
       id: 1,
-      question: "kya sab log chcahte hai ki shubham ki gaand marne se land or kala hjayega?",
+      question: "Baigan?",
       answers: [
         {
           text: "kyun nhi !! par mera to pehle se hi kaala hai",
