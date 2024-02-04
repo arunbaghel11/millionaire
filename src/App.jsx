@@ -1,6 +1,6 @@
-
+import React from "react";
 import { useEffect, useMemo, useState } from "react";
-import "./app.css"; // Import the CSS file
+import "./App.css"; // Import the CSS file
 import Timer from "./components/Timer";
 
 
