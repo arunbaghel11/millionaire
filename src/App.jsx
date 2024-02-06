@@ -10,25 +10,25 @@ function App() {
   const [stop, setStop] = useState(false);
  const [earned, setEarned] = useState("$ 0");
 
-  const data = [
+const data = [
     {
       id: 1,
-      question: "Baigan?",
+      question: "Which planet is known as the Red planet",
       answers: [
         {
-          text: "kyun nhi !! par mera to pehle se hi kaala hai",
+          text: "mars",
           correct: true,
         },
         {
-          text: "mere naam chutttu hai mere pass to chut hai",
-          correct: true,
+          text: "venus",
+          correct: false,
         },
         {
-          text: "nilandiskc se pass disck hoti hai knd nhi smjhe to mai bhar hu ",
-          correct: true,
+          text: "jupitar",
+          correct: false,
         },
         {
-          text: "chal na lode",
+          text: "saturn",
           correct: false,
         },
       ],
@@ -79,88 +79,88 @@ function App() {
     },
     {
       id: 4,
-      question: "chuuuttttuu kitna  bada  randi or banakaloda hai  ?",
+      question: " What is the chemical symbol for water?",
       answers: [
         {
-          text: "macchar ki lulli hai chuutu",
+          text: "H20",
           correct: true,
         },
         {
-          text: "suar ki jhaat hai chuuutu",
+          text: "co2",
           correct: false,
         },
         {
-          text: "kution me kutiya hai chuuuuututututututu ",
+          text: "Nacl ",
           correct: false,
         },
         {
-          text: "chhhhhhuuuuuuu sabko gand dene vala randi hai ",
+          text: "CH4",
           correct: false,
         },
       ],
     },
     {
       id: 5,
-      question: "nilandisck ki gand ke uper shi jawab dijiiye?",
+      question: "Who painted the Mona Lisa?",
       answers: [
         {
-          text: "uski gaand ka moment of inertia usse hi poochna na maderchod nilandisk",
-          correct: false,
-        },
-        {
-          text: "uski gand me disck bachpan me daali gyi thi ya clg m aane ke baad",
-          correct: false,
-        },
-        {
-          text: "dusck ka size kitna hai approx",
-          correct: false,
-        },
-        {
-          text: "niladnidisk aaj Mr arun ko gand dega",
+          text: "Leonardo da Vinci",
           correct: true,
+        },
+        {
+          text: "Vincent van Gogh",
+          correct: false,
+        },
+        {
+          text: " Pablo Picasso",
+          correct: false,
+        },
+        {
+          text: "Michelangelo ",
+          correct: false,
         },
       ],
     },
     {
       id: 6,
-      question: "anubhav hamara neta hai sabko gand deta hai iss me sab kon hai ?",
+      question: "Who was the first person to step on the moon?",
       answers: [
         {
-          text: "praksh randi ki jhaat ",
+          text: "Buzz Aldrin ",
           correct: false,
         },
         {
-          text: "randi khane pe jaake gand deta hai ",
+          text: "Neil Armstrong ",
           correct: true,
         },
         {
-          text: "ya ghar bhulake sabko gand deta hai",
+          text: "Yuri Gagarin",
           correct: false,
         },
         {
-          text: "iss ke alawa mai kuch soch nhi para mc ",
+          text: " Michael Collins ",
           correct: false,
         },
       ],
     },
     {
     id: 7,
-    question: "kya vipul clg ki zindagi khtm hote hote apni bangalan ko propose karpayenge ?",
+    question: "What is the tallest mountain in the world?",
     answers: [
       {
-        text: "iss randi ke bass ki bbaat nhi hai ",
+        text: "Mount Kilimanjaro ",
         correct: false,
       },
       {
-        text: "londa heera hai khtaa kheera hai iss option ka question se lene dena nhi hai to gandu or option padna behenkelode ",
+        text: "Mount Everest ",
         correct: true,
       },
       {
-        text: "vipul se pehle koi or lejayega usse",
+        text: "K2",
         correct: false,
       },
       {
-        text: "☝🏻 middle finger milii nhi to ye vali daaldi chal gand mara ab ",
+        text: "Mount Fuji ",
         correct: false,
       },
     ],
