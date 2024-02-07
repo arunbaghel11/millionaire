@@ -1,3 +1,5 @@
+/* Base styles */
+
 .app {
     height: 100vh;
     display: flex;
@@ -7,18 +9,19 @@
 
 .main {
     width: calc(100% - 75px); /* Adjusted width to accommodate the .pyramid element */
-    background:linear-gradient(to bottom,rgba(0,0,0,),#020230) ,
-    url("./assests/bg.jpg") center; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0), #020230);
+    background:     url("./assests/bg.jpg") center;
     display: flex;
     flex-direction: column;
     height: 100%;
- 
 }
-.top{
-   height: 50%; 
-   position: relative;
+
+.top {
+    height: 50%;
+    position: relative;
 }
-.timer{
+
+.timer {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -32,51 +35,55 @@
     bottom: 10px;
     left: 80px;
 }
-.bottom{
+
+.bottom {
     height: 50%;
 }
-.trivia{
+
+.trivia {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
 }
-.question{
+
+.question {
     width: 80%;
-    background: linear-gradient(#100241,black);
+    background: linear-gradient(#100241, black);
     border: 2px solid white;
     text-align: center;
     padding: 20px;
-    border-radius: 10px ;
+    border-radius: 10px;
     font-size: 20px;
+    margin-bottom: 100px;
 }
-.answers{
+
+.answers {
     width: 100%;
     display: flex;
     justify-content: center;
-     flex-wrap: wrap;
-
+    flex-wrap: wrap;
 }
-.answer{
+
+.answer {
     width: 40%;
     padding: 10px;
     text-align: center;
-    background: linear-gradient(#0e0124,#22074d);
+    background: linear-gradient(#0e0124, #22074d);
     border: 1px solid white;
     border-radius: 15px;
     font-size: 20px;
     font-weight: 300;
     cursor: pointer;
-margin: 0 10px 20px 10px;
-
+    margin: 0 10px 20px 10px;
 }
-.answer:hover,
-.answer.active{
 
+.answer:hover,
+.answer.active {
     background: mediumblue;
 }
+
 .answer.correct {
     animation: correct 3s ease forwards;
 }
@@ -118,7 +125,6 @@ margin: 0 10px 20px 10px;
         background: crimson;
     }
 }
-     
 
 .pyramid {
     width: 25%;
@@ -127,38 +133,72 @@ margin: 0 10px 20px 10px;
     justify-content: center;
     margin-left: auto; /* Move the .pyramid element to the right side */
 }
-.moneyList{
-    list-style: none;
-    width:100%;
-    padding: 20px;
 
+.moneyList {
+    list-style: none;
+    width: 100%;
+    padding: 20px;
 }
-.moneyListItem{
+
+.moneyListItem {
     display: flex;
     align-items: center;
     padding: 5px;
     border-radius: 5px;
 }
-.moneyListItem.active{
+
+.moneyListItem.active {
     background-color: teal;
 }
-.moneyListItemNumber{
-font-size: 18px;
-font-weight: 100;
-width: 30%;
-}
-.moneyListItemAmount{
-    font-size: 20;
-font-weight: 300;
+
+.moneyListItemNumber {
+    font-size: 18px;
+    font-weight: 100;
+    width: 30%;
 }
 
+.moneyListItemAmount {
+    font-size: 20px;
+    font-weight: 300;
+}
 
-.endText{
+.endText {
     position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+    .main {
+        width: 100%;
+    }
+    .question {
+        width: 90%;
+    }
+    .answer {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .timer {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px; /* Adjusted position to be higher */
+        right: 20px; /* Adjusted position to be on the right side */
+    }
+    .question {
+        font-size: 18px;
+    }
+    .answer {
+        font-size: 16px;
+    }
+}
+
+/* Add more media queries as needed */
