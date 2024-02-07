@@ -5,6 +5,7 @@
     display: flex;
     background-color: #020230;
     color: white;
+    
 }
 
 .main {
@@ -14,6 +15,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    flex: 1; /* Added flex property to take remaining space */
+    padding: 20px; /* Added padding for better spacing on mobile */
 }
 
 .top {
@@ -190,8 +193,8 @@
         width: 50px;
         height: 50px;
         font-size: 24px;
-        bottom: 20px; /* Adjusted position to be higher */
-        right: 20px; /* Adjusted position to be on the right side */
+        bottom: 20px; 
+        right: 20px; 
     }
     .question {
         font-size: 18px;
@@ -199,6 +202,9 @@
     .answer {
         font-size: 16px;
     }
+    .main {
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
 }
 
-/* Add more media queries as needed */
+
