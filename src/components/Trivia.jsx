@@ -1,65 +1,56 @@
-// import { useState } from "react"
 import React, { useState, useEffect } from "react";
-// import useSound from "use-sound";
-// import play from "../assests/play.wav";
-// import correct from "../assests/correct.wav";
-// import wrong from "../assests/wrong.wav";
+// Import the sound files
+import playSound from "../assests/play.wav";
+import correctSound from "../assests/correct.wav";
+import wrongSound from "../assests/wrong.wav";
+
 export default function Trivia({
     data,
     setStop,
     questionNumber,
     setQuestionNumber,
-
-
-
 }) {
-    const[question,setQuestion]=useState(null);
+    const [question, setQuestion] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [className, setClassName] = useState("answer");
-  // const[letsPlay]=useSound(play);
-  // const[correctAnswer]=useSound(correct);
-  // const[wrongAnswer]=useSound(wrong);
-  
-  /*useEffect(() => {
-    letsPlay();
-  }, [letsPlay ]); */
 
-
+    // Define audio elements for the sound effects
+    const playAudio = new Audio(playSound);
+    const correctAudio = new Audio(correctSound);
+    const wrongAudio = new Audio(wrongSound);
 
     useEffect(() => {
         setQuestion(data[questionNumber - 1]);
-      }, [data, questionNumber]);
+    }, [data, questionNumber]);
 
-
-      const delay = (duration, callback) => {
+    const delay = (duration, callback) => {
         setTimeout(() => {
-          callback();
+            callback();
         }, duration);
-      };
+    };
 
-      const handleClick = (a) => {
+    const handleClick = (a) => {
         setSelectedAnswer(a);
         setClassName("answer active");
-    delay(3000,()=>
-      setClassName((prevClassName) =>
-              a.correct ? `${prevClassName} correct` : `${prevClassName} wrong`
-          )
-    );
-    delay(6000,()=>
-    {
-      if(a.correct) {
-        setQuestionNumber((prev)=>prev+1);
-        setSelectedAnswer(null);
-      } else {
-        setStop(true);
-      }
-    }
-  );
-       
+        playAudio.play(); // Play sound when an answer is selected
+        delay(3000, () => {
+            setClassName((prevClassName) =>
+                a.correct ? `${prevClassName} correct` : `${prevClassName} wrong`
+            );
+        });
+        delay(6000, () => {
+            if (a.correct) {
+                correctAudio.play(); // Play sound for correct answer
+                setQuestionNumber((prev) => prev + 1);
+                setSelectedAnswer(null);
+            } else {
+                wrongAudio.play(); // Play sound for wrong answer
+                setStop(true);
+            }
+        });
     };
-    
 
-      return (
+    return (
         <div className="trivia">
             {question && (
                 <>
